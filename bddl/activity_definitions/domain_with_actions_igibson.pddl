@@ -1,7 +1,13 @@
 (define (domain igibson-actions)
     (:requirements :strips :adl :typing)
 
-    (:types hardback.n.01 table.n.02 floor.n.01 shelf.n.01 book.n.02 agent.n.01)
+    (:types 
+        hardback.n.01 table.n.02 floor.n.01 shelf.n.01 book.n.02 agent.n.01
+        bread.n.01 countertop.n.01 flour.n.01 milk.n.01 chair.n.01 
+        meat.n.01 cheese.n.01 yogurt.n.01 soup.n.01 carrot.n.03 
+        broccoli.n.02 apple.n.01 orange.n.01 cabinet.n.01 electric_refrigerator.n.01
+        oatmeal.n.01 chip.n.04 vegetable_oil.n.01 sugar.n.01
+    )
 
     (:predicates 
         (inside ?obj1 ?obj2)
@@ -21,10 +27,10 @@
         (soaked ?obj1)
         (timeset ?obj1)
         (toggled_on ?obj1)
-        ; New Handwritten predicates (njk and wbm3)
-        (holding ?obj1)
         (inroom ?obj1 ?room1)
         (onfloor ?obj1 ?floor1)
+        ; New Handwritten predicates (njk and wbm3)
+        (holding ?obj1)
         (handsfull ?agent)
     )
 
