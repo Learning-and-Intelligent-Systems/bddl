@@ -1,5 +1,5 @@
 (define (problem sorting_mail_0)
-    (:domain igibson-action)
+    (:domain igibson-actions)
 
     (:objects
         envelope.n.01_1 envelope.n.01_2 envelope.n.01_3 envelope.n.01_4 - envelope.n.01
@@ -22,8 +22,6 @@
         (inroom floor.n.01_1 living_room) 
         (onfloor agent.n.01_1 floor.n.01_1)
     )
-
-    ; NOTE: the 'touching' predicate isn't declared in the main problem file!!!
     
     (:goal 
         (and 

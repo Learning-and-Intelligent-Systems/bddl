@@ -1,9 +1,6 @@
 (define (problem sorting_groceries_0)
     (:domain igibson-actions)
 
-    ; NOTE: FD cannot solve this problem probably because it has a disjunction in the goal 
-    ; and that's weird (njk has seen FD fail on similar problems before)
-
     (:objects
      	bread.n.01_1 - bread.n.01
     	countertop.n.01_1 - countertop.n.01

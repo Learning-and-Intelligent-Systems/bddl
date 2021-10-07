@@ -19,11 +19,9 @@
         (inroom shelf.n.01_1 living_room) 
         (inroom floor.n.01_1 living_room) 
         (onfloor agent.n.01_1 floor.n.01_1)
-        ; (nextto agent.n.01_1 table.n.02_1)
     )
     
-    (:goal
-        ; (ontop hardback.n.01_1 shelf.n.01_1) 
+    (:goal 
         (and 
             (forall 
                 (?hardback.n.01 - hardback.n.01) 
