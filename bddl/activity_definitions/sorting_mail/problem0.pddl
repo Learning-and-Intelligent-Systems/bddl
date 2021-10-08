@@ -23,6 +23,8 @@
         (onfloor agent.n.01_1 floor.n.01_1)
     )
     
+    ; NOTE: This 'touching' predicate is not declared in the overall domain file!!!
+
     (:goal 
         (and 
             (forall 

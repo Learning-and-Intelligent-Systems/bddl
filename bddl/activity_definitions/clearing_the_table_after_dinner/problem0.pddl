@@ -31,7 +31,7 @@
         (inroom table.n.02_1 dining_room) 
         (onfloor agent.n.01_1 floor.n.01_1)
     )
-    
+
     (:goal 
         (and 
             (forall 
