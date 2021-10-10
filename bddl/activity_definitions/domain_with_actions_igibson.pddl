@@ -1,5 +1,5 @@
 (define (domain igibson-actions)
-    (:requirements :strips :adl :typing)
+    (:requirements :strips :adl :typing :negative-preconditions)
 
     (:types 
         facsimile.n.02 vacuum.n.04 dishtowel.n.01 apparel.n.01 seat.n.03 bottle.n.01 mouse.n.04 window.n.01 scanner.n.02 
