@@ -2,6 +2,7 @@
 *egg-info*
 *__pycache__*
 **/*.ipynb
+.github
 **/*.ipynb_checkpoints
 **/*.pdf
 **/*.csv
