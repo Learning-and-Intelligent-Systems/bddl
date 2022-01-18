@@ -6330,7 +6330,15 @@
                           ],
                           "abilities": {
                             "dustyable": {},
-                            "heatSource": {},
+                            "heatSource": {
+                              "temperature": 500,
+                              "heating_rate": 0.02,
+                              "distance_threshold": 0.2,
+                              "requires_toggled_on": true,
+                              "requires_closed": false,
+                              "requires_inside": false
+                            },
+                            "stainable": {},
                             "toggleable": {}
                           }
                         }
@@ -6338,7 +6346,15 @@
                       "igibson_categories": [],
                       "abilities": {
                         "dustyable": {},
-                        "heatSource": {},
+                        "heatSource": {
+                          "temperature": 500,
+                          "heating_rate": 0.02,
+                          "distance_threshold": 0.2,
+                          "requires_toggled_on": true,
+                          "requires_closed": false,
+                          "requires_inside": false
+                        },
+                        "stainable": {},
                         "toggleable": {}
                       }
                     },
