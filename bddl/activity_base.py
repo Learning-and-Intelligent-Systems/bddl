@@ -57,38 +57,54 @@ class BEHAVIORActivityInstance(object):
         random.shuffle(scenes)
         accept_scene = True
         self.online_sampling = online_sampling
+        max_sample_attempts = 10
 
         for scene in scenes:
             if scene_id is not None and scene != scene_id:
                 continue
             if '_int' not in scene:
                 continue
-            if scene_kwargs is None:
-                self.scene = scene_class(scene)
-            else:
-                self.scene = scene_class(scene, **scene_kwargs)
+ 
+            sample_attempts = 0
+            found_valid_scene_sample = False
 
-            # Reject scenes with missing non-sampleable objects
-            # Populate scope with simulator objects
-            if self.online_sampling:
-                accept_scene, feedback = self.check_scene()
-                if not accept_scene:
-                    continue
+            while sample_attempts < max_sample_attempts and not found_valid_scene_sample:
+                print(f"Sample Attempt {sample_attempts} for scene_id {scene_id}")
+                if scene_kwargs is None:
+                    self.scene = scene_class(scene)
+                else:
+                    self.scene = scene_class(scene, **scene_kwargs)
 
-            # Import scenes and objects into simulator
-            self.import_scene()
-            self.import_agent()
+                # Reject scenes with missing non-sampleable objects
+                # Populate scope with simulator objects
+                if self.online_sampling:
+                    accept_scene, feedback = self.check_scene()
+                    if not accept_scene:
+                        sample_attempts += 1
+                        continue
 
-            if self.online_sampling:
-                # Sample objects to satisfy initial conditions
-                accept_scene, feedback = self.sample()
-                if not accept_scene:
-                    continue
+                # Import scenes and objects into simulator
+                self.import_scene()
+                self.import_agent()
 
+                if self.online_sampling:
+                    # Sample objects to satisfy initial conditions
+                    accept_scene, feedback = self.sample()
+                    if not accept_scene:
+                        sample_attempts += 1
+                        continue
+
+                # NOTE: Temporarily not having clutter!
                 # Add clutter objects into the scenes
-                self.clutter_scene()
+                # self.clutter_scene()
 
-            self.move_agent()
+                found_valid_scene_sample = True
+                self.move_agent()
+
+            if sample_attempts >= max_sample_attempts:
+                print("ERROR: tried more than max sample attempts to sample a" +
+                "scene consistent with init conditions and failed :(." +
+                "Raise max_sample_attempts.")
 
         # Generate goal condition with the fully populated self.object_scope
         self.gen_goal_conditions()
