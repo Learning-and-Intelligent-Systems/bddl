@@ -26,7 +26,7 @@
     
     (:goal 
         (and 
-            (onfloor ?carton.n.02_1 ?floor.n.01_1) 
+            (ontop ?carton.n.02_1 ?floor.n.01_1) 
             (forall 
                 (?sock.n.01 - sock.n.01) 
                 (ontop ?sock.n.01 ?sofa.n.01_1)
