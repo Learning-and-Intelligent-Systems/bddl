@@ -34,8 +34,8 @@
     (:goal 
         (and 
             (forall 
-                (pot_plant.n.01 - pot_plant.n.01) 
-                (soaked pot_plant.n.01)
+                (?pot_plant.n.01 - pot_plant.n.01) 
+                (soaked ?pot_plant.n.01)
             )
         )
     )

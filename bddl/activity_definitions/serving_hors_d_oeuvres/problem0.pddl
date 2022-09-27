@@ -46,15 +46,19 @@
                 (?cracker.n.01 - cracker.n.01) 
                 (ontop ?cracker.n.01 table.n.02_1)
             ) 
-            (forpairs 
+            (forall 
                 (?salad.n.01 - salad.n.01)
-                (?cracker.n.01 - cracker.n.01)
-                (nextto ?salad.n.01 ?cracker.n.01)
+                (exists
+                    (?cracker.n.01 - cracker.n.01)
+                    (nextto ?salad.n.01 ?cracker.n.01)
+                )
             )
-            (forpairs 
+            (forall
                 (?cheese.n.01 - cheese.n.01) 
-                (?parsley.n.02 - parsley.n.02) 
-                (ontop ?parsley.n.02 ?cheese.n.01)
+                (exists
+                    (?parsley.n.02 - parsley.n.02) 
+                    (ontop ?parsley.n.02 ?cheese.n.01)
+                )
             ) 
         )
     )

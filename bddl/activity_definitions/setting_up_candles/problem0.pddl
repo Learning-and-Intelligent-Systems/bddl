@@ -27,15 +27,40 @@
     
     (:goal 
         (and 
-            (forn 
-                (3) 
-                (?candle.n.01 - candle.n.01) 
-                (ontop ?candle.n.01 table.n.02_1)
-            ) 
-            (forn 
-                (3) 
-                (?candle.n.01 - candle.n.01) 
-                (ontop ?candle.n.01 table.n.02_2)
+            (exists
+                (?candle.n.01_i - candle.n.01)
+                (exists
+                    (?candle.n.01_j - candle.n.01)
+                    (exists
+                        (?candle.n.01_k - candle.n.01)
+                        (and
+                            (not (= ?candle.n.01_i ?candle.n.01_j))
+                            (not (= ?candle.n.01_j ?candle.n.01_k))
+                            (not (= ?candle.n.01_i ?candle.n.01_k))
+                            (ontop ?candle.n.01_i table.n.02_1)
+                            (ontop ?candle.n.01_j table.n.02_1)
+                            (ontop ?candle.n.01_k table.n.02_1)
+                        )
+                    )
+                )
+            )
+
+            (exists
+                (?candle.n.01_i - candle.n.01)
+                (exists
+                    (?candle.n.01_j - candle.n.01)
+                    (exists
+                        (?candle.n.01_k - candle.n.01)
+                        (and
+                            (not (= ?candle.n.01_i ?candle.n.01_j))
+                            (not (= ?candle.n.01_j ?candle.n.01_k))
+                            (not (= ?candle.n.01_i ?candle.n.01_k))
+                            (ontop ?candle.n.01_i table.n.02_2)
+                            (ontop ?candle.n.01_j table.n.02_2)
+                            (ontop ?candle.n.01_k table.n.02_2)
+                        )
+                    )
+                )
             )
         )
     )

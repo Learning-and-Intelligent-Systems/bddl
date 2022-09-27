@@ -82,9 +82,6 @@
                 (stained chair.n.01_2)
             ) 
             (not 
-                (stained floor.n.01_1)
-            ) 
-            (not 
                 (stained table.n.02_1)
             )
         )

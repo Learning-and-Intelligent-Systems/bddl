@@ -41,25 +41,33 @@
     
     (:goal 
         (and 
-            (forpairs 
+            (forall
+                (?basket.n.01 - basket.n.01)
+                (exists
+                    (?candle.n.01 - candle.n.01)
+                    (inside ?candle.n.01 ?basket.n.01)
+                )
+            )
+            (forall
                 (?basket.n.01 - basket.n.01) 
-                (?candle.n.01 - candle.n.01) 
-                (inside ?candle.n.01 ?basket.n.01)
+                (exists
+                    (?cheese.n.01 - cheese.n.01) 
+                    (inside ?cheese.n.01 ?basket.n.01)
+                )
             ) 
-            (forpairs 
+            (forall
                 (?basket.n.01 - basket.n.01) 
-                (?cheese.n.01 - cheese.n.01) 
-                (inside ?cheese.n.01 ?basket.n.01)
+                (exists
+                    (?cookie.n.01 - cookie.n.01) 
+                    (inside ?cookie.n.01 ?basket.n.01)
+                )
             ) 
-            (forpairs 
+            (forall 
                 (?basket.n.01 - basket.n.01) 
-                (?cookie.n.01 - cookie.n.01) 
-                (inside ?cookie.n.01 ?basket.n.01)
-            ) 
-            (forpairs 
-                (?basket.n.01 - basket.n.01) 
-                (?bow.n.08 - bow.n.08) 
-                (inside ?bow.n.08 ?basket.n.01)
+                (exists
+                    (?bow.n.08 - bow.n.08) 
+                    (inside ?bow.n.08 ?basket.n.01)
+                )
             )
         )
     )

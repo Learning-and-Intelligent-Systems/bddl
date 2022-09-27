@@ -45,15 +45,19 @@
                 (?basket.n.01 - basket.n.01) 
                 (ontop ?basket.n.01 countertop.n.01_1)
             ) 
-            (forpairs 
-                (?basket.n.01 - basket.n.01) 
-                (?egg.n.02 - egg.n.02) 
-                (inside ?egg.n.02 ?basket.n.01)
+            (forall 
+                (?basket.n.01 - basket.n.01)
+                (exists
+                    (?egg.n.02 - egg.n.02) 
+                    (inside ?egg.n.02 ?basket.n.01)
+                )
             ) 
-            (forpairs 
-                (?basket.n.01 - basket.n.01) 
-                (?candy.n.01 - candy.n.01) 
-                (inside ?candy.n.01 ?basket.n.01)
+            (forall
+                (?basket.n.01 - basket.n.01)
+                (exists 
+                    (?candy.n.01 - candy.n.01) 
+                    (inside ?candy.n.01 ?basket.n.01)
+                )
             ) 
             (exists 
                 (?basket.n.01 - basket.n.01) 
@@ -62,18 +66,22 @@
                     (inside ball.n.01_1 ?basket.n.01)
                 )
             ) 
-            (forpairs 
-                (?bow.n.08 - bow.n.08) 
+            (forall 
                 (?basket.n.01 - basket.n.01) 
-                (or 
-                    (ontop ?bow.n.08 ?basket.n.01) 
-                    (inside ?bow.n.08 ?basket.n.01)
+                (exists
+                    (?bow.n.08 - bow.n.08) 
+                    (or 
+                        (ontop ?bow.n.08 ?basket.n.01) 
+                        (inside ?bow.n.08 ?basket.n.01)
+                    )
                 )
             ) 
-            (forpairs 
-                (?book.n.02 - book.n.02) 
+            (forall
                 (?basket.n.01 - basket.n.01) 
-                (nextto ?book.n.02 ?basket.n.01)
+                (exists
+                    (?book.n.02 - book.n.02) 
+                    (nextto ?book.n.02 ?basket.n.01)
+                )
             )
         )
     )

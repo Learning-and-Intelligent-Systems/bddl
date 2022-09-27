@@ -44,31 +44,39 @@
     
     (:goal 
         (and 
-            (forpairs 
-                (?lettuce.n.03 - lettuce.n.03) 
-                (?plate.n.04 - plate.n.04) 
-                (ontop ?lettuce.n.03 ?plate.n.04)
-            ) 
-            (forpairs 
-                (?apple.n.01 - apple.n.01) 
-                (?plate.n.04 - plate.n.04) 
-                (and 
-                    (sliced ?apple.n.01) 
-                    (ontop ?apple.n.01 ?plate.n.04)
+            (forall
+                (?plate.n.04 - plate.n.04)
+                (exists
+                    (?lettuce.n.03 - lettuce.n.03) 
+                    (ontop ?lettuce.n.03 ?plate.n.04)
                 )
             ) 
-            (forpairs 
-                (?tomato.n.01 - tomato.n.01) 
+            (forall
                 (?plate.n.04 - plate.n.04) 
-                (and 
-                    (ontop ?tomato.n.01 ?plate.n.04) 
-                    (sliced ?tomato.n.01)
+                (exists
+                    (?apple.n.01 - apple.n.01) 
+                    (and 
+                        (sliced ?apple.n.01) 
+                        (ontop ?apple.n.01 ?plate.n.04)
+                    )
                 )
             ) 
-            (forpairs 
-                (?radish.n.01 - radish.n.01) 
+            (forall
                 (?plate.n.04 - plate.n.04) 
-                (ontop ?radish.n.01 ?plate.n.04)
+                (exists
+                    (?tomato.n.01 - tomato.n.01) 
+                    (and 
+                        (ontop ?tomato.n.01 ?plate.n.04) 
+                        (sliced ?tomato.n.01)
+                    )
+                )
+            ) 
+            (forall
+                (?plate.n.04 - plate.n.04) 
+                (exists
+                    (?radish.n.01 - radish.n.01) 
+                    (ontop ?radish.n.01 ?plate.n.04)
+                )
             )
         )
     )

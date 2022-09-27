@@ -36,20 +36,26 @@
     
     (:goal 
         (and 
-            (forpairs 
+            (forall 
                 (?stocking.n.01 - stocking.n.01) 
-                (?cube.n.05 - cube.n.05) 
-                (inside ?cube.n.05 ?stocking.n.01)
+                (exists
+                    (?cube.n.05 - cube.n.05) 
+                    (inside ?cube.n.05 ?stocking.n.01)
+                )
             ) 
-            (forpairs 
+            (forall
                 (?stocking.n.01 - stocking.n.01) 
-                (?candy.n.01 - candy.n.01) 
-                (inside ?candy.n.01 ?stocking.n.01)
+                (exists
+                    (?candy.n.01 - candy.n.01) 
+                    (inside ?candy.n.01 ?stocking.n.01)
+                )
             ) 
-            (forpairs 
+            (forall
                 (?stocking.n.01 - stocking.n.01) 
-                (?pen.n.01 - pen.n.01) 
-                (inside ?pen.n.01 ?stocking.n.01)
+                (exists
+                    (?pen.n.01 - pen.n.01) 
+                    (inside ?pen.n.01 ?stocking.n.01)
+                )
             )
         )
     )

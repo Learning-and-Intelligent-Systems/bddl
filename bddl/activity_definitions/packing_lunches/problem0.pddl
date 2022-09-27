@@ -43,15 +43,19 @@
     
     (:goal 
         (and 
-            (forpairs 
-                (?chip.n.04 - chip.n.04) 
+            (forall 
                 (?carton.n.02 - carton.n.02) 
-                (inside ?chip.n.04 ?carton.n.02)
+                (exists
+                    (?chip.n.04 - chip.n.04) 
+                    (inside ?chip.n.04 ?carton.n.02)
+                )
             ) 
-            (forpairs 
-                (?cookie.n.01 - cookie.n.01) 
+            (forall 
                 (?carton.n.02 - carton.n.02) 
-                (inside ?cookie.n.01 ?carton.n.02)
+                (exists
+                    (?cookie.n.01 - cookie.n.01) 
+                    (inside ?cookie.n.01 ?carton.n.02)
+                )
             ) 
             (exists 
                 (?carton.n.02 - carton.n.02) 

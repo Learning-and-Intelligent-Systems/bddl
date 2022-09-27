@@ -58,16 +58,28 @@
                     (stained gym_shoe.n.01)
                 )
             ) 
-            (forn 
-                (2) 
-                (gym_shoe.n.01 - gym_shoe.n.01) 
-                (nextto gym_shoe.n.01 table.n.02_1)
-            ) 
-            (forn 
-                (2) 
-                (gym_shoe.n.01 - gym_shoe.n.01) 
-                (under gym_shoe.n.01 table.n.02_1)
-            ) 
+            (exists
+                (?gym_shoe.n.01_i - gym_shoe.n.01)
+                (exists
+                    (?gym_shoe.n.01_j - gym_shoe.n.01)
+                    (and
+                        (not (= ?gym_shoe.n.01_i ?gym_shoe.n.01_j))
+                        (nextto ?gym_shoe.n.01_i table.n.02_1)
+                        (nextto ?gym_shoe.n.01_j table.n.02_1)
+                    )
+                )
+            )
+            (exists
+                (?gym_shoe.n.01_i - gym_shoe.n.01)
+                (exists
+                    (?gym_shoe.n.01_j - gym_shoe.n.01)
+                    (and
+                        (not (= ?gym_shoe.n.01_i ?gym_shoe.n.01_j))
+                        (under ?gym_shoe.n.01_i table.n.02_1)
+                        (under ?gym_shoe.n.01_j table.n.02_1)
+                    )
+                )
+            )
             (forall 
                 (gym_shoe.n.01 - gym_shoe.n.01) 
                 (onfloor gym_shoe.n.01 floor.n.01_1)

@@ -25,11 +25,13 @@
     
     (:goal 
         (and 
-            (forpairs 
-                (?alarm.n.02 - alarm.n.02) 
-                (?table.n.02 - table.n.02) 
-                (ontop ?alarm.n.02 ?table.n.02)
-            ) 
+            (forall
+                (?table.n.02 - table.n.02)
+                (exists
+                    (?alarm.n.02 - alarm.n.02)
+                    (ontop ?alarm.n.02 ?table.n.02)
+                )
+            )
             (forall 
                 (?alarm.n.02 - alarm.n.02) 
                 (toggled_on ?alarm.n.02)

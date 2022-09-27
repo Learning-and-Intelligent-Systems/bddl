@@ -45,15 +45,20 @@
                 (?candle.n.01 - candle.n.01)
                 (ontop ?candle.n.01 table.n.02_1)
             )
-            (forn 
-                (1)
+            (exists
                 (?bow.n.08 - bow.n.08)
                 (ontop ?bow.n.08 table.n.02_1)
             )
-            (forn
-                (2)
-                (?bow.n.08 - bow.n.08)
-                (ontop ?bow.n.08 sofa.n.01_1)
+            (exists
+                (?bow.n.08_i - bow.n.08)
+                (exists
+                    (?bow.n.08_j - bow.n.08)
+                    (and
+                        (not (= ?bow.n.08_i ?bow.n.08_j))
+                        (ontop ?bow.n.08_i sofa.n.01_1)
+                        (ontop ?bow.n.08_j sofa.n.01_1)
+                    )
+                )
             )
             (ontop wreath.n.01_1 table.n.02_1)
         )

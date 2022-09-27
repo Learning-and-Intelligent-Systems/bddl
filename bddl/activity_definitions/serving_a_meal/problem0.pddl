@@ -66,34 +66,44 @@
                 (?fork.n.01 - fork.n.01) 
                 (ontop ?fork.n.01 table.n.02_1)
             ) 
-            (forpairs 
-                (?spoon.n.01 - spoon.n.01) 
+            (forall 
                 (?soup.n.01 - soup.n.01) 
-                (nextto ?spoon.n.01 ?soup.n.01)
+                (exists
+                    (?spoon.n.01 - spoon.n.01) 
+                    (nextto ?spoon.n.01 ?soup.n.01)
+                )
             ) 
             (forall 
                 (?water.n.06 - water.n.06) 
                 (ontop ?water.n.06 table.n.02_1)
             ) 
-            (forpairs 
-                (?chicken.n.01 - chicken.n.01) 
+            (forall 
                 (?plate.n.04 - plate.n.04) 
-                (ontop ?chicken.n.01 ?plate.n.04)
+                (exists
+                    (?chicken.n.01 - chicken.n.01) 
+                    (ontop ?chicken.n.01 ?plate.n.04)
+                )
             ) 
-            (forpairs 
-                (?salad.n.01 - salad.n.01) 
+            (forall
                 (?plate.n.04 - plate.n.04) 
-                (nextto ?salad.n.01 ?plate.n.04)
+                (exists
+                    (?salad.n.01 - salad.n.01) 
+                    (nextto ?salad.n.01 ?plate.n.04)
+                )
             ) 
-            (forpairs 
-                (?bread.n.01 - bread.n.01) 
+            (forall 
                 (?plate.n.04 - plate.n.04) 
-                (nextto ?bread.n.01 ?plate.n.04)
+                (exists
+                    (?bread.n.01 - bread.n.01) 
+                    (nextto ?bread.n.01 ?plate.n.04)
+                )
             ) 
-            (forpairs 
-                (?cake.n.03 - cake.n.03) 
-                (?plate.n.04 - plate.n.04) 
-                (nextto ?cake.n.03 ?plate.n.04)
+            (forall 
+                (?plate.n.04 - plate.n.04)
+                (exists 
+                    (?cake.n.03 - cake.n.03) 
+                    (nextto ?cake.n.03 ?plate.n.04)
+                )
             )
         )
     )
