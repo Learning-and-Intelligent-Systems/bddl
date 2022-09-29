@@ -74,15 +74,15 @@ surfaces = set(get_all_children(get_object_type_hierarchy_by_name("surface", dat
 objs_to_place_ontop |= objs_to_place_ontop_extended | surfaces
 
 
-# Function to parse out objects that have an 'openable' property.
-def get_all_openable_children(object_dict):
-    openable_objects = set()
-    if "openable" in object_dict['abilities'].keys():
-        openable_objects.add(object_dict["name"].split(".n")[0])
+# Function to parse out objects that have a 'name_ability' property.
+def get_all_name_able_children(object_dict, name_ability):
+    sliceable_objects = set()
+    if name_ability in object_dict["abilities"].keys():
+        sliceable_objects.add(object_dict["name"].split(".n")[0])
     if "children" in object_dict.keys():
         for child in object_dict["children"]:
-            openable_objects |= get_all_openable_children(child)
-    return openable_objects
+            sliceable_objects |= get_all_name_able_children(child, name_ability)
+    return sliceable_objects
 
 # Print the result of the get_all_openable_children
 # function.
@@ -96,5 +96,10 @@ print("SURFACES WE CAN PLACE ONTO:")
 print(objs_to_place_ontop)
 print()
 print("OPENABLE OBJECTS:")
-print(get_all_openable_children(data))
+print(get_all_name_able_children(data, "openable"))
 print()
+print("SLICEABLE OBJECTS:")
+print(get_all_name_able_children(data, "sliceable"))
+print()
+print("SLICER OBJECTS:")
+print(get_all_name_able_children(data, "slicer"))
